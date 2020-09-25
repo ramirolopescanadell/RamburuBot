@@ -66,7 +66,7 @@ function elegir(msg){
 		.setDescription(titulo )
 		.setTimestamp()
 		.setFooter(msg.member.displayName +  ' no quiere tomar sus propias deciciones ' , msg.author.displayAvatarURL());
-	if(num == 0){
+	if(aux == ""){
 		embed.addField("Ejemplo: ", "`ram elegir opcion1, opcion2, opcion3` ");
 	}
 	msg.channel.send(embed);
