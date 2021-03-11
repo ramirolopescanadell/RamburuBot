@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const Ahorcado = require('./ahorcado.js');
 const wikiApi = require('./wiki-Api.js');
-const Audio = require('./audio.js');
+//const Audio = require('./audio.js');
 
 const adjetivos = ["pelotudo/a","boludo/a","inutil","enfermo mental","lindo","suripanta","hermoso/a",
 "especial","amigo/a de ricardo","el amor de mi vida","cornudo/a","pito duro","culo gordo","teton/a","pitocorto",
@@ -95,7 +95,7 @@ client.on('message', message =>{
 				case comandos[5]: iniciarAhorcado(message); break;
 				case comandos[6]: message.channel.send("equipo chico");break;
 				case comandos[7]: message.channel.send(wikiApi.consulta(message)); break;
-				case comandos[8]: Audio.tocToc(message,Discord); break;
+				case comandos[8]: //Audio.tocToc(message,Discord); break;
 				case 'help': mostrarAyuda(message);break;
 				default : mostrarError(message);
 				//case '': break;
