@@ -1,6 +1,6 @@
 {
-  "name": "DiscordBot2",
-  "version": "1.0.0",
+  "name": "DiscordBot",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,10 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
     "discord.js": "^12.5.1",
-    "jsdom": "^16.5.0",
-    "node-opus": "^0.3.3",
     "xmlhttprequest": "^1.8.0",
     "ytdl-core": "^4.5.0"
   },
