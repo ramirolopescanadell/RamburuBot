@@ -136,5 +136,3 @@ module.exports= {
 		}
 	}
 }; 
-
-//https://es.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&pageids=2307088&format=json
