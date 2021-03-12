@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const Ahorcado = require('./ahorcado.js');
 const wikiApi = require('./wiki-Api.js');
-//const Audio = require('./audio.js');
+const Audio = require('./audio.js');
 
 const adjetivos = ["pelotudo/a","boludo/a","inutil","enfermo mental","lindo","suripanta","hermoso/a",
 "especial","amigo/a de ricardo","el amor de mi vida","cornudo/a","pito duro","culo gordo","teton/a","pitocorto",
@@ -25,7 +25,7 @@ function mostrarAyuda(message){
 		**ricardo** -->  El bot te pone en tu lugar\n **hola** -->El bot te saluda
 		**que soy?** --> El bot te dice que sos\n **chau** --> El bot te dice adios
 		**ahorcado** --> Para jugar al ahorcado\n **elegir** --> El bot te ahorra tomar deciciones
-		**day** --> Novedades sobre el día de hoy`)
+		**day** --> Novedades sobre el dia de hoy\n **toctoc** --> Te tocan la puerta`)
 		.setTimestamp()
 		.setFooter(message.member.displayName +  ' necesita ayuda psicologica' , message.author.displayAvatarURL());
 	message.channel.send(embed);
@@ -95,10 +95,9 @@ client.on('message', message =>{
 				case comandos[5]: iniciarAhorcado(message); break;
 				case comandos[6]: message.channel.send("equipo chico");break;
 				case comandos[7]: message.channel.send(wikiApi.consulta(message)); break;
-				case comandos[8]: //Audio.tocToc(message,Discord); break;
+				case comandos[8]: Audio.tocToc(message,Discord); break;
 				case 'help': mostrarAyuda(message);break;
 				default : mostrarError(message);
-				//case '': break;
 			}
 		}
 	}

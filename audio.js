@@ -18,13 +18,12 @@ module.exports = {
 	    if (message.member.voice.channel) {
 	      
 	      const connection = await message.member.voice.channel.join();
-	      const url = 'https://www.youtube.com/watch?v=WjPveRViLZ4&ab_channel=PatricioAlfaro';
-		  const dispatcher = connection.play(ytdl(url, { filter: 'audioonly' }));
+		  const dispatcher = connection.play('sonidos/toctoc.mp3');
+
 
 		  dispatcher.on('finish', () => {
-  			console.log('Finished playing!');
+  			message.member.voice.channel.leave();
 			});
-		  dispatcher.destroy(); 
 		  
 	    } else {
 	      mostrarError(message, Discord);
