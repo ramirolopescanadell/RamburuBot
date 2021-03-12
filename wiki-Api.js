@@ -116,28 +116,26 @@ module.exports= {
 
 
 		let days = [];
-		console.log("2");
 		getInternationalFestivitys(xml,days);
-		console.log("3");
 		getFestivityList(xml,days);
 
 		let now = new Date();
-		console.log("4");
 		today = getToday(now);
 
 		let selectedDay = days.find(element => findDay(element,today));
 		if(selectedDay){
-			console.log("5");
 			return prettyMessage(selectedDay,msg);
 		}else{
 			let additionalDays = 1;
-			console.log("7");
+			console.log(new Date());
 			while(selectedDay == undefined){
 				now.setDate(new Date().getDate()+additionalDays);
 				selectedDay = days.find(element => findDay(element,getToday(now)));
 				additionalDays ++;
+				if (additionalDays > 30){
+					break;
+				}
 			}
-			console.log("6");
 			return nextFestivityMessage(selectedDay,msg);
 		}
 	}

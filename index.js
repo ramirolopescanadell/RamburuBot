@@ -94,7 +94,7 @@ client.on('message', message =>{
 				case comandos[4]: message.reply('Sos re ' + adjetivos[Math.floor(Math.random() * cant)]);break;
 				case comandos[5]: iniciarAhorcado(message); break;
 				case comandos[6]: message.channel.send("equipo chico");break;
-				case comandos[7]: message.channel.send(wikiApi.consulta(message));console.log("1"); break;
+				case comandos[7]: message.channel.send(wikiApi.consulta(message)); break;
 				case comandos[8]: //Audio.tocToc(message,Discord); break;
 				case 'help': mostrarAyuda(message);break;
 				default : mostrarError(message);
