@@ -132,6 +132,7 @@ module.exports= {
 				now.setDate(new Date().getDate()+additionalDays);
 				selectedDay = days.find(element => findDay(element,getToday(now)));
 				additionalDays ++;
+				console.log(now, selectedDay);
 				if (additionalDays > 30){
 					break;
 				}
