@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 
 function getToday(date){
 	day = date.getDate();
-	month = date.toLocaleString('default', { month: 'long' })
+	month = date.toLocaleString('es-AR', { month: 'long' })
 	return `${day} de ${month}`
 } 
 
