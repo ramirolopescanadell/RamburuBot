@@ -3,11 +3,11 @@ const client = new Discord.Client();
 const Ahorcado = require('./ahorcado.js');
 const wikiApi = require('./wiki-Api.js');
 const Audio = require('./audio.js');
+//const Recordatorio = require('./recordatorio.js');
 
-const adjetivos = ["pelotudo/a","boludo/a","inutil","enfermo mental","lindo","suripanta","hermoso/a",
-"especial","amigo/a de ricardo","el amor de mi vida","cornudo/a","pito duro","culo gordo","teton/a","pitocorto",
-"pito largo","presidente de la republica","virgo/a","sexy","de izquierda","de derecha","peronista",
-"otaku","amigo/a de stampone", "corrupto/a", "infumable", "¡AYUDA NO SOY NINGUN BOT, ME TIENEN SECUESTRADO!", "de niuels"];
+const adjetivos = ["inutil","lindo","suripanta","hermoso","especial","el amor de mi vida","presidente de la republica",
+"sexy","de izquierda","de derecha","peronista","otaku", "corrupto", "infumable", "¡AYUDA NO SOY NINGUN BOT, ME TIENEN SECUESTRADO!",
+"de niuels"];
 const cant = adjetivos.length;
 
 const comandos = ["ping","ricardo","hola","chau","que soy?", "ahorcado", "boca", "day", "toctoc"];
@@ -83,8 +83,10 @@ client.on('message', message =>{
 		var letra = message.content.split(" ",4)[2];
 		if((message.content.includes(comandos[5])) && (letra != undefined) && (ahorcados[message.channel.id] != undefined) ){
 				ahorcados[message.channel.id].insertarLetra(message,letra);
-		}else if(message.content.includes("elegir")){
+		}else if(message.content.startsWith("ram elegir")){
 			elegir(message);
+		/*}else if(message.content.startsWith("ram recordame")){
+			message.channel.send(Recordatorio.recordame(message));*/
 		}else{
 			switch(message.content.substring(4)){
 				case comandos[0]: message.reply('pong'); break;
