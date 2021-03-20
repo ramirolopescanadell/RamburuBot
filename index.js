@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const Ahorcado = require('./ahorcado.js');
 const wikiApi = require('./wiki-Api.js');
 const Audio = require('./audio.js');
+const config = require('./config.json');
 //const Recordatorio = require('./recordatorio.js');
 
 const adjetivos = ["inutil","lindo","suripanta","hermoso","especial","el amor de mi vida","presidente de la republica",
@@ -104,4 +105,4 @@ client.on('message', message =>{
 		}
 	}
 });
-client.login('NzU1OTI2MjQ3OTA5MDk3NTAy.X2KZLQ.F4EjVXFORkTHsPx9xdPB9qMqzqc');
+client.login(config.token);
