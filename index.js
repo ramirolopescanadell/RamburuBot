@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const Ahorcado = require('./ahorcado.js');
 const wikiApi = require('./wiki-Api.js');
 const Audio = require('./audio.js');
+const diaDeMuerte = require('./diaDeMuerte.js');
 //const Recordatorio = require('./recordatorio.js');
 
 const adjetivos = ["inutil","lindo","suripanta","hermoso","especial","el amor de mi vida","presidente de la republica",
@@ -10,7 +11,7 @@ const adjetivos = ["inutil","lindo","suripanta","hermoso","especial","el amor de
 "de niuels"];
 const cant = adjetivos.length;
 
-const comandos = ["ping","ricardo","hola","chau","que soy?", "ahorcado", "boca", "day", "toctoc"];
+const comandos = ["ping","ricardo","hola","chau","que soy?", "ahorcado", "boca", "day", "toctoc", "muerte"];
 var ahorcados = [];
 
 
@@ -25,7 +26,8 @@ function mostrarAyuda(message){
 		**ricardo** -->  El bot te pone en tu lugar\n **hola** -->El bot te saluda
 		**que soy?** --> El bot te dice que sos\n **chau** --> El bot te dice adios
 		**ahorcado** --> Para jugar al ahorcado\n **elegir** --> El bot te ahorra tomar deciciones
-		**day** --> Novedades sobre el dia de hoy\n **toctoc** --> Te tocan la puerta`)
+		**day** --> Novedades sobre el dia de hoy\n **toctoc** --> Te tocan la puerta
+		**muerte** --> El bot te dice que día vas a morir`)
 		.setTimestamp()
 		.setFooter(message.member.displayName +  ' necesita ayuda psicologica' , message.author.displayAvatarURL());
 	message.channel.send(embed);
@@ -74,6 +76,8 @@ function elegir(msg){
 	}
 	msg.channel.send(embed);
 }
+
+
 client.on('ready', () => {
 	console.log("Listo");
 });
@@ -98,6 +102,7 @@ client.on('message', message =>{
 				case comandos[6]: message.channel.send("equipo chico");break;
 				case comandos[7]: message.channel.send(wikiApi.consulta(message)); break;
 				case comandos[8]: Audio.tocToc(message,Discord); break;
+				case comandos[9]: message.channel.send(diaDeMuerte.seleccionarDia(Discord,message));break;
 				case 'help': mostrarAyuda(message);break;
 				default : mostrarError(message);
 			}

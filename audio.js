@@ -1,5 +1,3 @@
-const ytdl = require('ytdl-core');
-
 function mostrarError(message,Discord){
 	 const embed = new Discord.MessageEmbed() 
 		.setColor('BLUE') 
