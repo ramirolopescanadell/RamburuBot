@@ -119,7 +119,7 @@ module.exports= {
 		getInternationalFestivitys(xml,days);
 		getFestivityList(xml,days);
 
-		let now = new Date();
+		let now = msg.createdAt;
 		today = getToday(now);
 
 		let selectedDay = days.find(element => findDay(element,today));
@@ -128,7 +128,7 @@ module.exports= {
 		}else{
 			let additionalDays = 1;
 			while(selectedDay == undefined){
-				now.setDate(new Date().getDate()+additionalDays);
+				now.setDate(new Date(msg.createdAt).getDate()+additionalDays);
 				selectedDay = days.find(element => findDay(element,getToday(now)));
 				additionalDays ++;
 			}

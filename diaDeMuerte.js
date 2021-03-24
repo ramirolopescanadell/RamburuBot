@@ -9,7 +9,7 @@ function mostrarDia(fechaMuerte,Discord,msg){
 }
 module.exports = {
 	seleccionarDia: function(Discord,message){
-		let desde = new Date();
+		let desde = new Date(message.createdAt);
 		let hasta = new Date(2050,0,0);
 		let date = new Date(desde.getTime() + Math.random() * (hasta.getTime() - desde.getTime()));
 		let dia = date.getDate();
